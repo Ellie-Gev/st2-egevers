@@ -1,0 +1,13 @@
+<h1> New Yoga Pose </h1>
+
+<%= bootstrap_form_with model: @yoga_pose, method: :post, url: yoga_poses_path, data: { turbo: false } do |f| %>
+    <%= f.text_field :name %>
+    <%= f.select :part_of_body, %w[Legs Abs Arms Back Hamstrings Hips Chest Shoulders], {include_blank: true}, {class: 'selectpicker' } %>
+    <%= f.text_field :sanskrit %>
+    <%= f.submit %>
+
+<%end%>
+
+<p>
+    <%= link_to "Cancel", yoga_poses_path %>
+</p>

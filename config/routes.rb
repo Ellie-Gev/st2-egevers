@@ -12,5 +12,8 @@ Rails.application.routes.draw do
   root to: redirect('yoga_poses')
 
   get 'yoga_poses', to: 'yoga_poses#index', as: 'yoga_poses'
+  get 'yoga_poses/new', to: 'yoga_poses#new', as: 'new_yoga_pose'
+  post 'yoga_poses', to: 'yoga_poses#create'
   get 'yoga_poses/:id', to: 'yoga_poses#show', as: 'yoga_pose'
+  
 end
